@@ -8,9 +8,11 @@ A simple static website for serving PDF, DOC, HTML files and images using GitHub
 /
 ├── index.html       # Main file browser page
 ├── pdfs/           # PDF files directory
-├── docs/           # DOC files directory  
+├── docs/           # DOCX files directory  
 ├── pages/          # HTML pages directory
-└── images/         # Images directory
+├── images/         # Images directory
+├── pptx/           # PowerPoint files directory
+└── xlsx/           # Excel files directory
 ```
 
 ## Setup
@@ -20,9 +22,11 @@ A simple static website for serving PDF, DOC, HTML files and images using GitHub
 3. Select source: `main` branch and folder: `/ (root)`
 4. Add your files to the corresponding directories:
    - PDF files → `pdfs/`
-   - DOC files → `docs/`
+   - DOCX files → `docs/`
    - HTML files → `pages/`
    - Images → `images/`
+   - PPTX files → `pptx/`
+   - XLSX files → `xlsx/`
 
 ## Customization
 
@@ -34,13 +38,19 @@ const files = {
         { name: 'My Document', path: 'pdfs/mydocument.pdf' }
     ],
     docs: [
-        { name: 'Report.doc', path: 'docs/report.doc' }
+        { name: 'Report.docx', path: 'docs/report.docx' }
     ],
     html: [
         { name: 'About', path: 'pages/about.html' }
     ],
     images: [
         { name: 'Photo', path: 'images/photo.jpg' }
+    ],
+    pptx: [
+        { name: 'Presentation', path: 'pptx/presentation.pptx' }
+    ],
+    xlsx: [
+        { name: 'Data', path: 'xlsx/data.xlsx' }
     ]
 };
 ```

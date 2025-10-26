@@ -1,0 +1,4 @@
+This is actually a text file, but it has a .pdf extension.
+This tests how the parser handles files with incorrect extensions.
+The content is plain text, not PDF format.
+This should trigger validation errors in preprocessing.

@@ -107,7 +107,7 @@
     <div class="container">
         <header>
             <h1>📁 File Browser</h1>
-            <p class="subtitle">Browse PDF, DOC, HTML files and images</p>
+            <p class="subtitle">Browse PDF, DOCX, HTML, images, PPTX and XLSX files</p>
         </header>
         
         <div class="section">
@@ -137,22 +137,74 @@
                 <p class="empty">No images found</p>
             </div>
         </div>
+        
+        <div class="section">
+            <h2>📊 PowerPoint (PPTX)</h2>
+            <div class="file-list" id="pptxList">
+                <p class="empty">No PPTX files found</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 Excel (XLSX)</h2>
+            <div class="file-list" id="xlsxList">
+                <p class="empty">No XLSX files found</p>
+            </div>
+        </div>
     </div>
     
     <script>
-        // File lists - Update these with your actual files
+        // File lists
         const files = {
             pdfs: [
-                // Example: { name: 'document.pdf', path: 'pdfs/document.pdf' }
+                { name: 'Standard PDF', path: 'pdfs/standard.pdf' },
+                { name: 'Complex PDF', path: 'pdfs/complex.pdf' },
+                { name: 'Large PDF', path: 'pdfs/large.pdf' },
+                { name: 'Empty PDF', path: 'pdfs/empty.pdf' },
+                { name: 'Corrupted PDF', path: 'pdfs/corrupted_file.pdf' },
+                { name: 'Japanese PDF', path: 'pdfs/japanese.pdf' },
+                { name: 'Password Protected PDF', path: 'pdfs/password-protected.pdf' },
+                { name: 'Special Chars PDF', path: 'pdfs/special_chars_╤ä╨░╨╣╨╗_µ╡ïΦ»ò_≡ƒöÑ.pdf' },
+                { name: 'Wrong Extension PDF', path: 'pdfs/wrong_extension.pdf' }
             ],
             docs: [
-                // Example: { name: 'document.doc', path: 'docs/document.doc' }
+                { name: 'Standard DOCX', path: 'docs/standard.docx' },
+                { name: 'Complex DOCX', path: 'docs/complex.docx' },
+                { name: 'Large DOCX', path: 'docs/large.docx' },
+                { name: 'Empty DOCX', path: 'docs/empty.docx' },
+                { name: 'Corrupted DOCX', path: 'docs/corrupted.docx' },
+                { name: 'Special Chars DOCX', path: 'docs/special_chars.docx' }
             ],
             html: [
-                { name: 'Example Page', path: 'pages/example.html' }
+                { name: 'Example Page', path: 'pages/example.html' },
+                { name: 'Standard HTML', path: 'pages/standard.html' },
+                { name: 'Complex HTML', path: 'pages/complex.html' },
+                { name: 'Large HTML', path: 'pages/large.html' },
+                { name: 'Form HTML', path: 'pages/form.html' },
+                { name: 'Table HTML', path: 'pages/table.html' },
+                { name: 'Empty HTML', path: 'pages/empty.html' },
+                { name: 'Corrupted HTML', path: 'pages/corrupted.html' }
             ],
             images: [
-                // Example: { name: 'image.jpg', path: 'images/image.jpg' }
+                { name: 'Complex Image (TIFF)', path: 'images/complex_image.tiff' },
+                { name: 'Large Image (JPG)', path: 'images/large_image.jpg' },
+                { name: 'Table Image (PNG)', path: 'images/table_image.png' },
+                { name: 'Corrupted Image (GIF)', path: 'images/corrupted_image.gif' },
+                { name: 'Empty Image (BMP)', path: 'images/empty_image.bmp' }
+            ],
+            pptx: [
+                { name: 'Standard PPTX', path: 'pptx/standard.pptx' },
+                { name: 'Complex PPTX', path: 'pptx/complex.pptx' },
+                { name: 'Large PPTX', path: 'pptx/large.pptx' },
+                { name: 'Empty PPTX', path: 'pptx/empty.pptx' },
+                { name: 'Corrupted PPTX', path: 'pptx/corrupted.pptx' }
+            ],
+            xlsx: [
+                { name: 'Standard XLSX', path: 'xlsx/standard.xlsx' },
+                { name: 'Complex XLSX', path: 'xlsx/complex.xlsx' },
+                { name: 'Large XLSX', path: 'xlsx/large.xlsx' },
+                { name: 'Empty XLSX', path: 'xlsx/empty.xlsx' },
+                { name: 'Corrupted XLSX', path: 'xlsx/corrupted.xlsx' }
             ]
         };
         
@@ -165,6 +217,8 @@
             else if (type === 'pdf') icon = '📄';
             else if (type === 'doc') icon = '📝';
             else if (type === 'html') icon = '🌐';
+            else if (type === 'pptx') icon = '📊';
+            else if (type === 'xlsx') icon = '📊';
             
             div.innerHTML = `
                 <div class="icon">${icon}</div>
@@ -198,6 +252,8 @@
         renderFiles('doc', files.docs, 'docList');
         renderFiles('html', files.html, 'htmlList');
         renderFiles('image', files.images, 'imageList');
+        renderFiles('pptx', files.pptx, 'pptxList');
+        renderFiles('xlsx', files.xlsx, 'xlsxList');
     </script>
 </body>
 </html>
