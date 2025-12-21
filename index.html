@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Browser</title>
+    <title>Dynamic Web Application</title>
+    <link rel="stylesheet" href="css/dynamic-pages.css">
     <style>
         * {
             margin: 0;
@@ -104,7 +105,25 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="#" class="nav-logo" onclick="event.preventDefault(); window.router?.navigate('')">🚀 Dynamic App</a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="event.preventDefault(); window.router?.navigate('')">Home</a></li>
+                <li><a href="#dashboard" onclick="event.preventDefault(); window.router?.navigate('dashboard')">Dashboard</a></li>
+                <li><a href="#content" onclick="event.preventDefault(); window.router?.navigate('content')">Content</a></li>
+                <li><a href="#data" onclick="event.preventDefault(); window.router?.navigate('data')">Data</a></li>
+                <li><a href="#feed" onclick="event.preventDefault(); window.router?.navigate('feed')">Feed</a></li>
+                <li><a href="#analytics" onclick="event.preventDefault(); window.router?.navigate('analytics')">Analytics</a></li>
+                <li><a href="#settings" onclick="event.preventDefault(); window.router?.navigate('settings')">Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- App Container -->
+    <div id="app">
+    <div class="container" id="home-container">
         <header>
             <h1>📁 File Browser</h1>
             <p class="subtitle">Browse PDF, DOCX, HTML, images, PPTX and XLSX files</p>
@@ -255,6 +274,14 @@
         renderFiles('pptx', files.pptx, 'pptxList');
         renderFiles('xlsx', files.xlsx, 'xlsxList');
     </script>
+    </div>
+    </div>
+
+    <!-- Dynamic Pages Scripts -->
+    <script src="js/data-api.js"></script>
+    <script src="js/page-generator.js"></script>
+    <script src="js/page-initializers.js"></script>
+    <script src="js/router.js"></script>
 </body>
 </html>
 

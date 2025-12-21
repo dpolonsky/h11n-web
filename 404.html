@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // GitHub Pages 404.html fallback for SPA routing
+        // This ensures that any direct URL access works
+        const path = window.location.pathname;
+        const hash = window.location.hash;
+        
+        // If there's a hash, redirect to index with hash
+        if (hash) {
+            window.location.replace('/' + (path.split('/').slice(0, -1).join('/') || '') + hash);
+        } else {
+            // Otherwise redirect to index.html
+            window.location.replace('/index.html');
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
+
