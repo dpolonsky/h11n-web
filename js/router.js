@@ -187,27 +187,18 @@ class DynamicRouter {
             window.PageInitializers[type]();
         }
     }
-
-    async loadPage(url) {
-        try {
-            const response = await fetch(url);
-            const html = await response.text();
-            const app = document.getElementById('app');
-            if (app) {
-                app.innerHTML = html;
-            }
-        } catch (error) {
-            console.error('Error loading page:', error);
-        }
-    }
 }
 
 // Initialize router when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
+        // Mark that JavaScript is enabled
+        document.documentElement.classList.add('js-enabled');
         window.router = new DynamicRouter();
     });
 } else {
+    // Mark that JavaScript is enabled
+    document.documentElement.classList.add('js-enabled');
     window.router = new DynamicRouter();
 }
 

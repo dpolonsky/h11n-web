@@ -72,9 +72,15 @@ body[data-theme="dark"] .nav-links a {
 
 /* Dynamic Page Container */
 .dynamic-page {
+    display: none; /* Hidden by default, shown when JS loads */
     max-width: 1200px;
     margin: 0 auto;
     padding: 30px 20px;
+}
+
+/* Show dynamic pages when JavaScript is enabled */
+.js-enabled .dynamic-page {
+    display: block;
 }
 
 .page-header {

@@ -102,21 +102,40 @@
             color: #999;
             padding: 40px;
         }
+        
+        /* Hide navigation if JavaScript is disabled */
+        .no-js .nav-container {
+            display: none;
+        }
+        
+        /* Ensure file browser is visible by default */
+        #home-container {
+            display: block !important;
+        }
+        
+        /* Hide dynamic pages by default (will be shown by JS) */
+        .dynamic-page {
+            display: none;
+        }
     </style>
+    <script>
+        // Remove no-js class immediately if JavaScript is enabled
+        document.documentElement.classList.remove('no-js');
+    </script>
 </head>
-<body>
+<body class="no-js">
     <!-- Navigation -->
     <nav class="nav-container">
         <div class="nav-content">
-            <a href="#" class="nav-logo" onclick="event.preventDefault(); window.router?.navigate('')">🚀 Dynamic App</a>
+            <a href="#" class="nav-logo" onclick="if(window.router){event.preventDefault(); window.router.navigate('');}">🚀 Dynamic App</a>
             <ul class="nav-links">
-                <li><a href="#" onclick="event.preventDefault(); window.router?.navigate('')">Home</a></li>
-                <li><a href="#dashboard" onclick="event.preventDefault(); window.router?.navigate('dashboard')">Dashboard</a></li>
-                <li><a href="#content" onclick="event.preventDefault(); window.router?.navigate('content')">Content</a></li>
-                <li><a href="#data" onclick="event.preventDefault(); window.router?.navigate('data')">Data</a></li>
-                <li><a href="#feed" onclick="event.preventDefault(); window.router?.navigate('feed')">Feed</a></li>
-                <li><a href="#analytics" onclick="event.preventDefault(); window.router?.navigate('analytics')">Analytics</a></li>
-                <li><a href="#settings" onclick="event.preventDefault(); window.router?.navigate('settings')">Settings</a></li>
+                <li><a href="#" onclick="if(window.router){event.preventDefault(); window.router.navigate('');}">Home</a></li>
+                <li><a href="#dashboard" onclick="if(window.router){event.preventDefault(); window.router.navigate('dashboard');}">Dashboard</a></li>
+                <li><a href="#content" onclick="if(window.router){event.preventDefault(); window.router.navigate('content');}">Content</a></li>
+                <li><a href="#data" onclick="if(window.router){event.preventDefault(); window.router.navigate('data');}">Data</a></li>
+                <li><a href="#feed" onclick="if(window.router){event.preventDefault(); window.router.navigate('feed');}">Feed</a></li>
+                <li><a href="#analytics" onclick="if(window.router){event.preventDefault(); window.router.navigate('analytics');}">Analytics</a></li>
+                <li><a href="#settings" onclick="if(window.router){event.preventDefault(); window.router.navigate('settings');}">Settings</a></li>
             </ul>
         </div>
     </nav>
@@ -173,8 +192,12 @@
     </div>
     
     <script>
-        // File lists
-        const files = {
+        // File Browser Script - Works independently without router
+        // This script runs immediately and displays files even if JavaScript is limited
+        (function() {
+            try {
+                // File lists
+                const files = {
             pdfs: [
                 { name: 'Standard PDF', path: 'pdfs/standard.pdf' },
                 { name: 'Complex PDF', path: 'pdfs/complex.pdf' },
@@ -266,22 +289,52 @@
             });
         }
         
-        // Render all files
-        renderFiles('pdf', files.pdfs, 'pdfList');
-        renderFiles('doc', files.docs, 'docList');
-        renderFiles('html', files.html, 'htmlList');
-        renderFiles('image', files.images, 'imageList');
-        renderFiles('pptx', files.pptx, 'pptxList');
-        renderFiles('xlsx', files.xlsx, 'xlsxList');
+                // Render all files
+                renderFiles('pdf', files.pdfs, 'pdfList');
+                renderFiles('doc', files.docs, 'docList');
+                renderFiles('html', files.html, 'htmlList');
+                renderFiles('image', files.images, 'imageList');
+                renderFiles('pptx', files.pptx, 'pptxList');
+                renderFiles('xlsx', files.xlsx, 'xlsxList');
+                
+                // Ensure home container is visible
+                const homeContainer = document.getElementById('home-container');
+                if (homeContainer) {
+                    homeContainer.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error rendering file browser:', error);
+                // Show error message in containers
+                const containers = ['pdfList', 'docList', 'htmlList', 'imageList', 'pptxList', 'xlsxList'];
+                containers.forEach(id => {
+                    const container = document.getElementById(id);
+                    if (container) {
+                        container.innerHTML = '<p class="empty">Error loading files</p>';
+                    }
+                });
+            }
+        })();
     </script>
     </div>
     </div>
 
-    <!-- Dynamic Pages Scripts -->
+    <!-- Dynamic Pages Scripts - Optional enhancements -->
+    <!-- File browser above works independently - these scripts add dynamic pages -->
     <script src="js/data-api.js"></script>
     <script src="js/page-generator.js"></script>
     <script src="js/page-initializers.js"></script>
     <script src="js/router.js"></script>
+    
+    <!-- Fallback message if JavaScript is disabled -->
+    <noscript>
+        <style>
+            .nav-container { display: none; }
+        </style>
+        <div style="text-align: center; padding: 20px; color: white;">
+            <p>JavaScript is disabled. The file browser above works without JavaScript.</p>
+            <p>Enable JavaScript for dynamic pages and enhanced features.</p>
+        </div>
+    </noscript>
 </body>
 </html>
 
