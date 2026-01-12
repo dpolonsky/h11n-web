@@ -1,0 +1,17 @@
+# robots.txt for h11n-web
+# Allow all crawlers to access all content
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://dpolonsky.github.io/h11n-web/sitemap.xml
+
+# Disallow dynamic pages that are JavaScript-only (optional)
+# Uncomment if you don't want crawlers to index dynamic pages
+# Disallow: /#dashboard
+# Disallow: /#content
+# Disallow: /#data
+# Disallow: /#feed
+# Disallow: /#analytics
+# Disallow: /#settings
