@@ -1,6 +1,16 @@
 # h11n-web
 
-A dynamic web application with constantly updating pages, serving PDF, DOC, HTML files and images using GitHub Pages.
+A **fully static website** with dynamic client-side features, serving PDF, DOC, HTML files and images. Works on any static hosting service including GitHub Pages, Netlify, Vercel, and AWS S3.
+
+## 🚀 Fully Static - No Build Required
+
+This is a **100% static website** with:
+- ✅ No server-side dependencies
+- ✅ No build process required
+- ✅ No npm/node_modules needed
+- ✅ All JavaScript runs client-side
+- ✅ All data generated in the browser
+- ✅ Works immediately after upload
 
 ## Structure
 
@@ -85,3 +95,36 @@ The application uses **hash-based routing** (`#/dashboard` instead of `/dashboar
 - ✅ No 404 errors on page refresh
 
 The `404.html` file serves as a fallback for any direct path access, redirecting to the main application.
+
+## Static Site Features
+
+- **Zero Dependencies**: No package.json, no npm install, no build step
+- **Client-Side Only**: All JavaScript runs in the browser
+- **Relative Paths**: Works in any subdirectory or root
+- **Progressive Enhancement**: File browser works without JavaScript
+- **Hash-Based Routing**: No server configuration needed
+- **Self-Contained**: All assets included, no CDN dependencies
+
+## Deployment Options
+
+### GitHub Pages
+```bash
+git push origin main
+```
+Enable GitHub Pages in repository settings → Done!
+
+### Netlify
+1. Drag and drop the folder
+2. Done!
+
+### Vercel
+```bash
+vercel --prod
+```
+
+### AWS S3 / Any Static Host
+1. Upload all files
+2. Point web server to `index.html`
+3. Done!
+
+See [STATIC-SITE.md](STATIC-SITE.md) for complete static site verification checklist.
