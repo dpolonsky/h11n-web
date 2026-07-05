@@ -52,56 +52,50 @@
   
   <!-- PDF Files -->
   <url>
+    <loc>https://dpolonsky.github.io/h11n-web/pdfs/bci.pdf</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dpolonsky.github.io/h11n-web/pdfs/bci-2.pdf</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dpolonsky.github.io/h11n-web/pdfs/internal-tje.pdf</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dpolonsky.github.io/h11n-web/pdfs/solution-reporting.pdf</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dpolonsky.github.io/h11n-web/pdfs/pdf-html-eval-sf-aws.pdf</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://dpolonsky.github.io/h11n-web/pdfs/standard.pdf</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dpolonsky.github.io/h11n-web/pdfs/complex.pdf</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dpolonsky.github.io/h11n-web/pdfs/large.pdf</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dpolonsky.github.io/h11n-web/pdfs/empty.pdf</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://dpolonsky.github.io/h11n-web/pdfs/corrupted_file.pdf</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://dpolonsky.github.io/h11n-web/pdfs/japanese.pdf</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dpolonsky.github.io/h11n-web/pdfs/password-protected.pdf</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://dpolonsky.github.io/h11n-web/pdfs/special_chars_%E2%95%A4a%CC%88%E2%94%90%E2%94%80%E2%94%90%E2%94%97_%C2%B5%E2%91%A1i%CC%88%CE%A6%C2%BBo%CC%80_%E2%89%A1%C6%92o%CC%88%C3%91.pdf</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://dpolonsky.github.io/h11n-web/pdfs/wrong_extension.pdf</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

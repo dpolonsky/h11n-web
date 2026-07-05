@@ -142,12 +142,13 @@
     <script>
         // Only valid PDF files (excluding corrupted, empty, and wrong extension files)
         const validPdfs = [
+            { name: 'BCI', path: '../pdfs/bci.pdf' },
+            { name: 'BCI 2', path: '../pdfs/bci-2.pdf' },
+            { name: 'Internal TJE', path: '../pdfs/internal-tje.pdf' },
+            { name: 'Solution Reporting', path: '../pdfs/solution-reporting.pdf' },
+            { name: 'PDF HTML Eval SF AWS', path: '../pdfs/pdf-html-eval-sf-aws.pdf' },
             { name: 'Standard PDF', path: '../pdfs/standard.pdf' },
-            { name: 'Complex PDF', path: '../pdfs/complex.pdf' },
-            { name: 'Large PDF', path: '../pdfs/large.pdf' },
-            { name: 'Japanese PDF', path: '../pdfs/japanese.pdf' },
-            { name: 'Password Protected PDF', path: '../pdfs/password-protected.pdf' },
-            { name: 'Special Chars PDF', path: '../pdfs/special_chars_╤ä╨░╨╣╨╗_µ╡ïΦ»ò_≡ƒöÑ.pdf' }
+            { name: 'Complex PDF', path: '../pdfs/complex.pdf' }
         ];
         
         function createFileItem(file) {
